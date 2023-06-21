@@ -1,0 +1,33 @@
+﻿<Window x:Class="Grpc.Client.WaitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:client="clr-namespace:Grpc.Client"
+        mc:Ignorable="d"
+        Title="WaitWindow" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ToolBar>
+            <Button Content="Init" Padding="16,4" x:Name="ButtonInit"/>
+            <Button Content="Send" Padding="16,4" x:Name="ButtonSend"/>
+        </ToolBar>
+
+        <TextBlock Grid.Row="1" Text="Logs:" />
+        <ScrollViewer Grid.Row="2">
+            <ItemsControl
+                    ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=client:WaitWindow}, Path=Logs}" />
+        </ScrollViewer>
+        <TextBlock Grid.Row="3" HorizontalAlignment="Left">
+                <Run Text="Log count: " />
+                <Run Text="{Binding RelativeSource={RelativeSource AncestorType=client:WaitWindow}, Path=LogCount}" />
+        </TextBlock>
+    </Grid>
+</Window>

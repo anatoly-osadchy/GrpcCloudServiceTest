@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net6.0-windows</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<useWPF>true</useWPF>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.50.0" />
+		<PackageReference Include="Grpc" Version="2.46.5" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Grpc.Client.Services\Grpc.Client.Services.csproj" />
+	</ItemGroup>
+
+</Project>
